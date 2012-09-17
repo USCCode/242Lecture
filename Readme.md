@@ -1,0 +1,1 @@
+These are my ramblings during class, for my webapps class http://www.csce242.com
