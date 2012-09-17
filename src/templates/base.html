@@ -16,9 +16,6 @@
 
 <form action="/" method="post">
 Enter your post: <input name="theContent" type="text"/><br />
-{% for t in tags %}
-<input type="checkbox" name={{ t.name }} /> {{ t.name }}
-{% endfor %}
 <br/>
 <input type="submit"></input>
 </form>

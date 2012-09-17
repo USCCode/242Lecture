@@ -29,7 +29,6 @@ class MyHandler(webapp2.RequestHandler):
         self.templateValues = {}
         self.templateValues['title'] = 'Datastore Tutorial'
         self.templateValues['posts'] = Post.all()
-        self.templateValues['tags'] = Tag.all()
         self.render('base.html')
         
     def post(self): # / 
