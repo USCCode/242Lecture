@@ -10,18 +10,26 @@
 <ol>
 {% for p in posts %}
 <li>{{ p.content }}</li>
-
 {% endfor %}
 </ol>
-
-
 </div>
 
 <form action="/" method="post">
-Enter your post: <input name="theContent" type="text"/>
+Enter your post: <input name="theContent" type="text"/><br />
+{% for t in tags %}
+<input type="checkbox" name={{ t.name }} /> {{ t.name }}
+{% endfor %}
+<br/>
 <input type="submit"></input>
 </form>
-<p>
-</p>
+
+
+<hr/>
+<h3>New Tags</h3>
+<form action="/" method="post">
+Enter your new tag: <input name="tagname" type="text"/><br />
+<input type="submit"></input>
+</form>
+
 </body>
 </html>

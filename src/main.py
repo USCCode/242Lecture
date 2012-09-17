@@ -15,6 +15,9 @@ jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.di
 class Post(db.Model):
     content = db.StringProperty()
 
+class Tag(db.Model):
+    name = db.StringProperty()
+
 class MyHandler(webapp2.RequestHandler):
 
     def render(self, afile):
@@ -22,17 +25,22 @@ class MyHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template(afile)
         self.response.out.write(template.render(self.templateValues))
     
-    def get(self):
+    def get(self): # /
         self.templateValues = {}
-        self.templateValues['title'] = 'This is the title.'
-        query = Post.all()
-        self.templateValues['posts'] = query
+        self.templateValues['title'] = 'Datastore Tutorial'
+        self.templateValues['posts'] = Post.all()
+        self.templateValues['tags'] = Tag.all()
         self.render('base.html')
         
-    def post(self):
+    def post(self): # / 
         content = self.request.get('theContent')
-        newPost = Post(content=content)
-        newPost.put()
+        if (content != ''):
+            newPost = Post(content=content,tags=[])
+            newPost.put()
+        tagname = self.request.get('tagname')
+        if (tagname != ''):
+            newTag = Tag(name=tagname)
+            newTag.put()
         self.redirect('/')
         
     
