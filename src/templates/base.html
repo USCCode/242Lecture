@@ -6,6 +6,21 @@
 </head>
 <body>
 <h1>{{ title }}</h1>
+<div>
+<ol>
+{% for p in posts %}
+<li>{{ p.content }}</li>
+
+{% endfor %}
+</ol>
+
+
+</div>
+
+<form action="/" method="post">
+Enter your post: <input name="theContent" type="text"/>
+<input type="submit"></input>
+</form>
 <p>
 </p>
 </body>
