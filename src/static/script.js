@@ -1,10 +1,9 @@
-a = {
-		name: 'alice',
-		salary: 10000,
-		home: 'Internet'
+a = 11;
+
+function test(a){
+	return a;
 }
 
-for (var x in a){
-	console.log('x=' + x);
-	console.log('a[x]=' + a[x]);
+help = function(x,y) {
+	console.log("No help here");
 }
