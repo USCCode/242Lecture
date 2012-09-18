@@ -1,9 +1,20 @@
-a = 11;
+//Prototype inheritance vs Classical inheritance
 
-function test(a){
-	return a;
+//Constructor
+function Person(name){
+	this.name = name;
 }
 
-help = function(x,y) {
-	console.log("No help here");
+Person.prototype.sayHi = function(){
+	console.log("Hi, my name is " + this.name);
+}
+ 
+bob = new Person("Bob");
+alice = new Person("Alice");
+
+//Object inheritance function:
+function object(o){
+	function F() {};
+	F.prototype = o;
+	return new F();
 }
