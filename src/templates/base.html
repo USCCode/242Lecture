@@ -9,11 +9,7 @@
 <div>
 <ol>
 {% for p in posts %}
-<li>{{ p.content }} - 
-{% for tagname in p.tags %}
-{{ tagname }}
-{% endfor %}
-</li>
+<li>{{ p.content }}</li>
 {% endfor %}
 </ol>
 </div>
@@ -21,18 +17,6 @@
 <form action="/" method="post">
 Enter your post: <input name="theContent" type="text"/><br />
 <br/>
-{% for tag in tags %}
-<input type="checkbox" name="{{ tag.name }}"/> {{ tag.name }}
-{% endfor %}
-<br />
-<input type="submit"></input>
-</form>
-
-
-<hr/>
-<h3>New Tags</h3>
-<form action="/" method="post">
-Enter your new tag: <input name="tagname" type="text"/><br />
 <input type="submit"></input>
 </form>
 
