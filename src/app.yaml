@@ -16,6 +16,9 @@ handlers:
   
 - url: /pic
   static_dir: pic  
+  
+- url: /static
+  static_dir: static
 
 - url: /.*
   script: main.app
