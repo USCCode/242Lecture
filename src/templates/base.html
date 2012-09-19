@@ -5,6 +5,8 @@
 <title>{{ title }}</title>
 </head>
 <body>
+<p>{{ login }}</p>
+    
 <h1>{{ title }}</h1>
 <div>
 <ol>
@@ -13,7 +15,6 @@
 {% endfor %}
 </ol>
 </div>
-<p>Chosen one: {{ chosen }}</p>
 <form action="/" method="post">
 Enter your post: <input name="theContent" type="text"/><br />
 Number of Stars: <select name="stars" id="">
