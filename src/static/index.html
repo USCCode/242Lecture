@@ -2,12 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Javascript</title>
 </head>
 <body>
-<h1>JavaScript Tutorial: Modifying the DOM</h1>
+<h1>JavaScript Tutorial: Building a Bookmarklet</h1>
 <p id="message"></p>
-<div id="content"></div>
+<div id="content">
+Here is my <a href="javascript:(function(){
+	_s = document.createElement('script');
+	_s.src = 'http://' + location.host + '/static/bmlet.js?x=' + (Math.random());
+	document.getElementsByTagName('head')[0].appendChild(_s);
+}())">bookmarklet</a>
+</div>
 <script type="text/javascript" src="/static/script.js"></script>
 
 </body>
