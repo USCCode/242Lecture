@@ -1,26 +1,14 @@
+console.log('Loaded script.js');
 
-
-console.log('Hello');
-
-function double(x){
-	return 2*x
+function userClick(e){ //event handler
+	console.log('clicked');
+	$('#message').toggle();
 }
 
-function f(g, x) {
-	return g(x);
+function hideThis(e){
+	console.log('x=' + e.pageX);
 }
 
-a = {
-	name: 'bob',
-	cousin: {}
-};
-
-function print(a){
-	var i;
-	
-	for (i in a){
-		var b;
-		console.log(i);
-	}
-	b 
-}
+$(document).ready(function(){ //after  page is loaded
+	$('p').mousemove(hideThis); //set up event handler
+})
