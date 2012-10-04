@@ -1,23 +1,30 @@
 console.log('Loaded script.js');
 
-function handleResponse(data){
-	console.log('Got from server: ' + data);
+function repeatNtimes(n){
+	var n;
+	function repeatit(str){
+		var result = '';
+		for (var i=0; i < n; i++){
+			result += str;
+		}
+		return result;
+	};
+	
+	return repeatit;
 }
 
-function handleClick(e){
-	var text = $('#comment').val();
-	console.log('user typed ' + text);
-	$('#output').append('<li>' + text + '</li>');
-	$.ajax('/', {
-		type: 'POST',
-		data: {
-			text: text
-		},
-		success: handleResponse,
-		error: 
-	});
+
+function makeProperty(object, name){
+	var property;
+	o["set" + name] = function(x){
+		if (x .... )
+		property = x;
+	}
+	o["get" + name] = function(x){
+		return property;
+	}
 }
 
 $(document).ready(function(){
-	$('#myButton').click(handleClick);
-})
+
+});
