@@ -1,30 +1,28 @@
 console.log('Loaded script.js');
 
-function repeatNtimes(n){
-	var n;
-	function repeatit(str){
-		var result = '';
-		for (var i=0; i < n; i++){
-			result += str;
-		}
-		return result;
-	};
+function handleButtonClick(e){
+	console.log('User clicked');
+	$('#comments').append('<li>' + $('#comment').val() + '</li>');
+	e.stopPropagation(); //comment this out so see..
+}
+
+function handleDelete(e){
+	console.log('Delete');
+	console.log($(this));
+	$(this).remove();
+}
 	
-	return repeatit;
-}
-
-
-function makeProperty(object, name){
-	var property;
-	o["set" + name] = function(x){
-		if (x .... )
-		property = x;
-	}
-	o["get" + name] = function(x){
-		return property;
-	}
-}
-
 $(document).ready(function(){
-
+	$('#myButton').on("click", handleButtonClick); 
+	$('p').on('click', handleButtonClick);
+	
+	
+	$('#menu').on("click", 'li', function(){
+		console.log("Hello there: Menu");
+	});
+	$('#menu').on("click", 'li', handleDelete);
+	$('#menu').on('mousemove', function(){
+		console.log('mouse moved');
+	});
+	
 });

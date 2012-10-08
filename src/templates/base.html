@@ -10,9 +10,16 @@
 <h1>{{ title }}</h1>
 
 Comment: <input type="text" id="comment"/>
-<p id="myButton">Add it!</p>
+<p>
+	<span id="myButton">Add it!</span> <!-- The problem was this span was a div, 
+	   and HTML (or, Chome)does not allow a div inside a p () --> 
+</p>
 
-<ol id="output"></ol>
+<div id="menu">
+<ul id="comments">
+</ul>
+<p>Some other stuff</p>
+</div>
 
 </body>
 </html>

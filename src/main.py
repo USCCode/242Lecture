@@ -18,7 +18,7 @@ class Comment(db.Model):
 class MainpageHandler(webapp2.RequestHandler):
     def get(self): # /
         self.templateValues = {}
-        self.templateValues['title'] = 'jQuery Ajax Tutorial'
+        self.templateValues['title'] = 'jQuery Events Tutorial'
         template = jinja_environment.get_template("base.html")
         self.response.out.write(template.render(self.templateValues))
         
