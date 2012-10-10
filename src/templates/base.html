@@ -17,6 +17,9 @@ Comment: <input type="text" id="comment"/>
 
 <div id="menu">
 <ul id="comments">
+{% for c in comments %}
+<li>{{ c.text }}</li>
+{% endfor %}
 </ul>
 <p>Some other stuff</p>
 </div>
