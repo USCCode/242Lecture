@@ -9,20 +9,7 @@
 <body>
 <h1>{{ title }}</h1>
 
-Comment: <input type="text" id="comment"/>
-<p>
-	<span id="myButton">Add it!</span> <!-- The problem was this span was a div, 
-	   and HTML (or, Chome)does not allow a div inside a p () --> 
-</p>
-
-<div id="menu">
-<ul id="comments">
-{% for c in comments %}
-<li>{{ c.text }}</li>
-{% endfor %}
-</ul>
-<p>Some other stuff</p>
-</div>
+<input type="button" id="getitButton" value="Get it!"/>
 
 </body>
 </html>
