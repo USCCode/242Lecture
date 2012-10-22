@@ -1,24 +1,16 @@
 console.log('Loaded script.js');
 
-var theData; //the Model :: Model-View Controller 
-
-function showData(data){
-	console.log(data.name);
-	theData = data;
-	$('#result').html(data.name)
-}
+var canvas;
+var ctx;
 
 function handleClick(e){
-	$.ajax('/1',{
-		type: 'GET',
-		data: {
-			fmt: 'json'
-		},
-		success: showData
-	});
+	console.log('User clicked');
+	console.log(e);
 }
 
-
 $(document).ready(function(){
-	handleClick();
+	canvas = $('#board')[0];
+	ctx = canvas.getContext('2d');
+	$('#board').on('mousemove', handleClick);
+	
 });
